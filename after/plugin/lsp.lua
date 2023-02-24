@@ -1,17 +1,28 @@
 local lsp = require('lsp-zero').preset("recommended")
 
 lsp.ensure_installed({
-  'lua_ls',
   'gopls',
+  'lua_ls',
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
                 globals = { 'vim' }
             }
+        }
+    }
+})
+
+lsp.configure('gopls', {
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true
+            },
+            staticcheck = true
         }
     }
 })
@@ -25,6 +36,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ["<C-Space>"] = cmp.mapping.complete(),
 })
 
+-- Disable tab and shift-tab for Github Copilot support
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
