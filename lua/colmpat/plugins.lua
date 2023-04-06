@@ -19,11 +19,23 @@ packer.startup(function(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
   use 'theprimeagen/harpoon'
   use 'github/copilot.vim'
-  use 'tpope/vim-fugitive'
   use 'mbbill/undotree'
+  -- for previewing markdown files
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  -- git
+  use 'tpope/vim-fugitive'
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
+
+  -- go
+  use 'fatih/vim-go'
 
   use {
     'VonHeikemen/lsp-zero.nvim',

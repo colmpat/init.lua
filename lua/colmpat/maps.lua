@@ -35,3 +35,7 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 --- d and u now center
 keymap.set('n', '<C-d>', '<C-d>zz')
 keymap.set('n', '<C-u>', '<C-u>zz')
+
+-- change color scheme
+keymap.set('n', '<leader>cl', ':lua Day()<CR>')
+keymap.set('n', '<leader>cd', ':lua Night()<CR>')
