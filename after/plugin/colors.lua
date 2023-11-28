@@ -5,4 +5,4 @@ end
 function Night()
   vim.cmd.colorscheme("tokyonight-storm")
 end
-Night()
+Day()
