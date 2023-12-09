@@ -198,6 +198,21 @@ _G.packer_plugins = {
     path = "/Users/colmlang/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-dadbod"] = {
+    loaded = true,
+    path = "/Users/colmlang/.local/share/nvim/site/pack/packer/start/vim-dadbod",
+    url = "https://github.com/tpope/vim-dadbod"
+  },
+  ["vim-dadbod-completion"] = {
+    loaded = true,
+    path = "/Users/colmlang/.local/share/nvim/site/pack/packer/start/vim-dadbod-completion",
+    url = "https://github.com/kristijanhusak/vim-dadbod-completion"
+  },
+  ["vim-dadbod-ui"] = {
+    loaded = true,
+    path = "/Users/colmlang/.local/share/nvim/site/pack/packer/start/vim-dadbod-ui",
+    url = "https://github.com/kristijanhusak/vim-dadbod-ui"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/colmlang/.local/share/nvim/site/pack/packer/start/vim-fugitive",

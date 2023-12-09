@@ -3,6 +3,7 @@ local lsp = require('lsp-zero').preset("recommended")
 lsp.ensure_installed({
   'gopls',
   'lua_ls',
+  'jdtls',
 })
 
 -- Fix Undefined global 'vim'
@@ -12,6 +13,16 @@ lsp.configure('lua_ls', {
             diagnostics = {
                 globals = { 'vim' }
             }
+        }
+    }
+})
+
+lsp.configure('jdtls', {
+    cmd = { 'jdtls' },
+    --root_dir = lsp.util.root_pattern("pom.xml", ".git"),
+    init_options = {
+        bundles = {
+            vim.fn.glob("/home/alex/.local/share/nvim/lspinstall/java/jdtls/plugins/org.eclipse.equinox.weaving.*.jar")
         }
     }
 })
@@ -44,7 +55,7 @@ lsp.setup_nvim_cmp({
   mapping = cmp_mappings
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)

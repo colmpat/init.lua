@@ -16,6 +16,7 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 
 -- New tab
 keymap.set('n', 'te', ':tabedit')
+
 -- Split window
 keymap.set('n', 'ss', ':split<Return><C-w>w')
 keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
@@ -32,7 +33,7 @@ keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
---- d and u now center
+--- ctrl-d and ctrl-u now center the screen on the cursor (nicer scrolling feel)
 keymap.set('n', '<C-d>', '<C-d>zz')
 keymap.set('n', '<C-u>', '<C-u>zz')
 

@@ -5,4 +5,6 @@ end
 function Night()
   vim.cmd.colorscheme("tokyonight-storm")
 end
+
+-- Set default colorscheme to tokyonight-day
 Day()

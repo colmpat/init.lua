@@ -20,7 +20,7 @@ packer.startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
@@ -39,7 +39,7 @@ packer.startup(function(use)
   }
 
   -- go
-  use 'fatih/vim-go'
+  use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
 
   use {
     'VonHeikemen/lsp-zero.nvim',
