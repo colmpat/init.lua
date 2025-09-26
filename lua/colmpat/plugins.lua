@@ -25,7 +25,6 @@ packer.startup(function(use)
   }
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
   use 'theprimeagen/harpoon'
-  use 'github/copilot.vim'
   use 'mbbill/undotree'
   -- for previewing markdown files
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
@@ -37,31 +36,12 @@ packer.startup(function(use)
       require('gitsigns').setup()
     end
   }
+  use 'williamboman/mason.nvim'
 
-  -- go
-  use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
-
+  use 'github/copilot.vim'
   use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v1.x',
-    requires = {
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
-      {'williamboman/mason.nvim'},           -- Optional
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},         -- Required
-      {'hrsh7th/cmp-nvim-lsp'},     -- Required
-      {'hrsh7th/cmp-buffer'},       -- Optional
-      {'hrsh7th/cmp-path'},         -- Optional
-      {'saadparwaiz1/cmp_luasnip'}, -- Optional
-      {'hrsh7th/cmp-nvim-lua'},     -- Optional
-
-      -- Snippets
-      {'L3MON4D3/LuaSnip'},             -- Required
-      {'rafamadriz/friendly-snippets'}, -- Optional
-    }
+    'saghen/blink.cmp',
+    run = 'cargo build --release',
   }
 
 end)
