@@ -24,7 +24,6 @@ packer.startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
-  use 'theprimeagen/harpoon'
   use 'mbbill/undotree'
   -- for previewing markdown files
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
@@ -42,6 +41,15 @@ packer.startup(function(use)
   use {
     'saghen/blink.cmp',
     run = 'cargo build --release',
+  }
+
+  use {
+    'theprimeagen/harpoon',
+    branch = 'harpoon2',
+  }
+  use {
+    "jasonpanosso/harpoon-tabline.nvim",
+    requires = { { "theprimeagen/harpoon" } }
   }
 
 end)
