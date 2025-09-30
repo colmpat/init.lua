@@ -7,10 +7,10 @@ harpoon:setup()
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
-vim.keymap.set('n', '<C-j>', function() ui.nav_file(1) end)
-vim.keymap.set('n', '<C-k>', function() ui.nav_file(2) end)
-vim.keymap.set('n', '<C-l>', function() ui.nav_file(3) end)
-vim.keymap.set('n', '<C-;>', function() ui.nav_file(4) end)
+vim.keymap.set("n", "<C-j>", function() harpoon:list():select(1) end)
+vim.keymap.set("n", "<C-k>", function() harpoon:list():select(2) end)
+vim.keymap.set("n", "<C-l>", function() harpoon:list():select(3) end)
+vim.keymap.set("n", "<C-;>", function() harpoon:list():select(4) end)
 
 -- tabline
 require('harpoon-tabline').setup()
