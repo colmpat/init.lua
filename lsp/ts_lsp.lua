@@ -2,9 +2,9 @@ return {
   -- Command and arguments to start the server.
   cmd = { 'typescript-language-server', '--stdio' },
   -- Filetypes to automatically attach to.
-  filetypes = { 'javascript' },
+  filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
   root_markers = {
-    { 'package.json' },
+    { 'tsconfig.js', 'tsconfig.json', 'package.json' },
     '.git',
   },
 }
