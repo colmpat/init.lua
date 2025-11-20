@@ -5,6 +5,7 @@ return {
   filetypes = { 'lua' },
 
   root_markers = {
+    '.root-nvim-lsp-marker',
     { 'init.lua' },
     '.git',
   },
