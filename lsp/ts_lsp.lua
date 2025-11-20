@@ -5,6 +5,7 @@ return {
   filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
   root_markers = {
     'module.json',
+    '.root-nvim-lsp-marker',
     { 'tsconfig.js', 'tsconfig.json', 'package.json' },
     '.git',
   },
