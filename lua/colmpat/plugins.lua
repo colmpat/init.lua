@@ -37,7 +37,7 @@ packer.startup(function(use)
   }
   use 'williamboman/mason.nvim'
 
-  use 'github/copilot.vim'
+  -- use 'github/copilot.vim'
   use {
     'saghen/blink.cmp',
     run = 'cargo build --release',
