@@ -43,4 +43,4 @@ shorten_list_item_names = function(list)
     return shortened
 end
 
-require('harpoon-tabline').setup({ format_item_names: shorten_list_item_names })
+require('harpoon-tabline').setup({ format_item_names = shorten_list_item_names })
