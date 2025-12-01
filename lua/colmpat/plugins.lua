@@ -51,5 +51,6 @@ packer.startup(function(use)
     "jasonpanosso/harpoon-tabline.nvim",
     requires = { { "theprimeagen/harpoon" } }
   }
+  use 'mluders/comfy-line-numbers.nvim'
 
 end)
