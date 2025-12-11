@@ -15,7 +15,7 @@
 1. Once installed, you can install the packer packages with `:PackerSync` (and add/modify your
 dependancies [here](./lua/colmpat/plugins.lua))
 
-1. To support grep with `<leader>ps`, Telescope depends on `ripgrep`. Install it with:
+1. To support Telescope grep functionality, install `ripgrep` with:
     ```bash
     brew install ripgrep
     ```
@@ -39,14 +39,21 @@ I remapped `:Explore` to `<leader>sf` for ease of use
 
 Use this and use this often.
 
+- `<leader>ff` - find files in current directory
+- `<leader>fa` - find files tracked by git
+- `<leader>fs` - grep for a string in current directory
+- `<leader>fl` - live grep in current directory
+- `<leader>fr` - resume previous telescope search
+
 #### Harpoon: add files to a quick buffer
 > see/edit configuration [here](./after/plugin/harpoon.lua)
 
-You add files to a buffer of 4 hotfiles. Navigate to file # with:
+You add files to a buffer of 5 hotfiles. Navigate to file # with:
 1. `<leader>j`
-1. `<leader>k`
-1. `<leader>l`
-1. `<leader>h`
+2. `<leader>k`
+3. `<leader>l`
+4. `<leader>;`
+5. `<leader>h`
 
 add current file with `<leader>a`, show/rearrange/delete files in buffer with `<C-e>`
 
@@ -64,6 +71,30 @@ Move window:
 - `sk` -- go to window above
 - `sl` -- go to window to the right
 
+Resize window:
+- `<C-w><left>` -- decrease width
+- `<C-w><right>` -- increase width
+- `<C-w><up>` -- increase height
+- `<C-w><down>` -- decrease height
+
+#### Other helpful keymaps
+
+General editing:
+- `+` -- increment number under cursor
+- `-` -- decrement number under cursor
+- `<C-a>` -- select all text in buffer
+- `<C-d>` / `<C-u>` -- scroll down/up with cursor centered
+
+Tabs:
+- `te` -- open new tab (follow with filename)
+
+Git (fugitive):
+- `<leader>gs` -- open git status
+- `<leader>gd` -- open git diff in vertical split
+
+Undo:
+- `<leader>u` -- toggle undo tree
+
 ---
 
 ## LSP
@@ -76,8 +107,14 @@ Helpful tools:
 - `gd` - go to where this token is defined (functions, variables, etc.)
 - `<C-o>` - hop back to before you moved (like using `gd` for example)
 - `K` - hover the type, docs, and/or comments for this token
-- `<leader>vrr` - shows all times this token is referenced in your code (eg. where this function is called)
-- `<leader>vrn` - renames this token (and does so every place its referenced)
+- `<leader>rr` - shows all references to this token in your code (eg. where this function is called)
+- `<leader>rn` - rename this token (and does so every place it's referenced)
+- `<leader>ws` - search workspace symbols
+- `<leader>d` - show diagnostic information in a float
+- `<leader>ca` or `<leader>.` - show code actions
+- `<C-h>` (in insert mode) - show signature help
+- `[d` - go to next diagnostic
+- `]d` - go to previous diagnostic
 - more found (and configurable) [here](./after/plugin/lsp.lua)
 
 ---
