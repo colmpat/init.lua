@@ -8,4 +8,9 @@ return {
     { 'tsconfig.js', 'tsconfig.json', 'package.json' },
     '.git',
   },
+  init_options = {
+    tsserver = {
+      maxTsServerMemory = 32768,
+    },
+  },
 }
